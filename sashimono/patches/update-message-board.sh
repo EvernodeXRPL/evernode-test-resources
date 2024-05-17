@@ -3,7 +3,7 @@
 [ "$EUID" -ne 0 ] && echo "Please run with root privileges (sudo)." && exit 1
 
 repo_owner="EvernodeXRPL"
-repo_name="evernode-resources"
+repo_name="evernode-test-resources"
 file="index.js"
 
 export SASHIMONO_BIN=/usr/bin/sashimono
