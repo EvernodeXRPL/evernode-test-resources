@@ -21,7 +21,7 @@ echo "Updating the files.."
 
 if (! curl "https://raw.githubusercontent.com/$repo_owner/$repo_name/updated-patch/sashimono/patches/resources/sashimono/$file" -o "$SASHIMONO_BIN/$file") || (! chmod +x "$SASHIMONO_BIN/$file"); then
     echo "Update failed. Restoring.."
-    ! cp "$backup_file" "$SASHIMONO_BIN/$file" && echo "Restoring failed." && exit 1
+    ! cp -Rdp "$backup_file" "$SASHIMONO_BIN/$file" && echo "Restoring failed." && exit 1
     echo "Restored."
     exit 1
 fi

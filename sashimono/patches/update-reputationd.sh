@@ -33,7 +33,7 @@ function update() {
 if (! update); then
     echo "Update failed. Restoring.."
     rm -r "$REPUTATIOND_BIN"
-    ! cp "$backup" "$REPUTATIOND_BIN" && echo "Restoring failed." && exit 1
+    ! cp -Rdp "$backup" "$REPUTATIOND_BIN" && echo "Restoring failed." && exit 1
     echo "Restored."
     exit 1
 fi
